@@ -1,4 +1,4 @@
-# find-selection package
+# find-selection package for Atom Editor
 
 Find the next or previous occurrence of the currently selected text with one keystroke. There is no need to bring up the file dialog.
 
