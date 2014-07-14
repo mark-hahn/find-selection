@@ -1,0 +1,17 @@
+'context-menu':
+  '.overlayer':
+      'Find Next Selected Text':     'find-selection:find-next'
+      'Find Previous Selected Text': 'find-selection:find-previous'
+
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'Find Selection'
+      'submenu': [
+        { 'label': 'Find Next',     'command': 'find-selection:find-next' }
+        { 'label': 'Find Previous', 'command': 'find-selection:find-previous' }
+      ]
+    ]
+  }
+]

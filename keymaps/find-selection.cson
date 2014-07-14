@@ -1,0 +1,4 @@
+
+'.workspace .editor':
+  'ctrl-f3':       'find-selection:find-next'
+  'ctrl-shift-f3': 'find-selection:find-previous'

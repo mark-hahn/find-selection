@@ -1,0 +1,14 @@
+{
+  "name": "find-selection",
+  "main": "./lib/find-selection",
+  "version": "0.1.0",
+  "description": "Find occurance of selected text without using find dialog",
+  "activationEvents": ["find-selection:find-next", "find-selection:find-previous"],
+  "repository": "https://github.com/atom/find-selection",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  }
+}
