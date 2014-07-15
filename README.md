@@ -7,13 +7,14 @@ The default key to find the next occurrence is Ctrl-F3 (find-selection:find-next
 If nothing is selected or there is no next occurrence of the selected text then
 nothing will happen.
 
-It will work when the find/replace dialog is showing but it doesn't change anything in the dialog.  It does not affect the value used by f3.
+These search functions work whether the find/replace dialog is open or not.  If the find/replace dialog has been open since the editor loaded then the search text is inserted into the find dialog (open or not) so the next F3 uses that text.
 
 The functions are also available in the packages menu and in the editor context menu.
+
 
 ------
 
 To-Do:
-- Add tests.
+- Make F3 work whether the find dialog has been opened or not.
 - Support case-sensitive searches.
-- Insert selection into find dialog so next F3 uses the same text.
+- Add tests.

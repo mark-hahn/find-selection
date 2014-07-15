@@ -28,4 +28,8 @@ module.exports =
       else selMatchIdx = origIdx - 1
 
     editor.setSelectedBufferRanges [matchArray[selMatchIdx].range]
-    
+
+    if atom.packages.isPackageActive 'find-and-replace'
+      farPkg   = atom.packages.getActivePackage 'find-and-replace'
+      farPkgModule = farPkg.mainModule
+      farPkgModule.findView.setSelectionAsFindPattern.call farPkgModule
