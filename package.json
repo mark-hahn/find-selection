@@ -1,7 +1,7 @@
 {
   "name": "find-selection",
   "main": "./lib/find-selection",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Find occurance of selected text without using find dialog",
   "activationEvents": [
     "find-selection:find-next",
