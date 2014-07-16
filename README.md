@@ -1,6 +1,6 @@
 # find-selection package for Atom Editor
 
-Find the next or previous occurrence of the currently selected text with one keystroke. There is no need to bring up the file dialog.
+Find the next or previous occurrence of the currently selected text with one keystroke. There is no need to bring up the find/replace dialog.
 
 The default key to find the next occurrence is Ctrl-F3 (find-selection:find-next) and to find the previous occurrence is Ctrl-Shift-F3 (find-selection:find-previous).  The searches are not case sensitive.
 
