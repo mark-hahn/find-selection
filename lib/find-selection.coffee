@@ -9,7 +9,7 @@ module.exports =
     buffer      = editor.getBuffer()
     origRange   = editor.getSelection().getBufferRange()
     selText     = editor.getSelectedText().replace /[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&"
-    noSel = origRange.isEmpty()
+    noSel       = origRange.isEmpty()
 
     if (selText or= @selection) then @selection = selText
     if not selText then return
@@ -19,7 +19,7 @@ module.exports =
     buffer.scan new RegExp(selText, 'ig'), (res) ->
       if origIdx is null
           comp = res.range.compare origRange
-          if (if dir > 0 then comp > -1 else comp < 1)
+          if comp > -1
             origIdx = matchArray.length
       matchArray.push res
 
