@@ -1,8 +1,9 @@
 module.exports =
-  activate: ->
+  activate: (@state) ->
     atom.workspaceView.command "find-selection:find-next",     => @find +1
     atom.workspaceView.command "find-selection:find-previous", => @find -1
-    @selection = ''
+    @state ?= {}
+    @state.selection = (@state.selection ?= '')
 
   find: (dir) ->
     editor      = atom.workspace.activePaneItem
@@ -10,8 +11,8 @@ module.exports =
     origRange   = editor.getSelection().getBufferRange()
     selText     = editor.getSelectedText().replace /[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&"
     noSel       = origRange.isEmpty()
-
-    if (selText or= @selection) then @selection = selText
+    
+    if (selText or= @state.selection) then @state.selection = selText
     if not selText then return
 
     origIdx = null
@@ -38,3 +39,5 @@ module.exports =
     newRange = matchArray[selMatchIdx].range
     editor.setCursorBufferPosition newRange.start, {autoscroll: yes}
     editor.setSelectedBufferRanges [newRange]
+
+  serialize: -> @state
