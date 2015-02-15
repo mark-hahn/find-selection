@@ -1,7 +1,13 @@
+
+SubAtom = require 'sub-atom'
+
 module.exports =
   activate: (@state) ->
-    atom.workspaceView.command "find-selection:find-next",     => @find +1
-    atom.workspaceView.command "find-selection:find-previous", => @find -1
+    @subs = new SubAtom
+    
+    @subs.add atom.commands.add 'atom-text-editor', "find-selection:find-next",     => @find +1
+    @subs.add atom.commands.add 'atom-text-editor', "find-selection:find-previous", => @find -1
+    
     @state ?= {}
     @state.selection = (@state.selection ?= '')
 
@@ -41,3 +47,5 @@ module.exports =
     editor.setSelectedBufferRanges [newRange]
 
   serialize: -> @state
+  
+  deactivate: -> @subs.dispose()

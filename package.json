@@ -1,7 +1,7 @@
 {
   "name": "find-selection",
   "main": "./lib/find-selection",
-  "version": "0.13.3",
+  "version": "0.13.4",
   "description": "Find occurance of selected text without using find dialog",
   "activationEvents": [
     "find-selection:find-next",
@@ -10,7 +10,9 @@
   "repository": "https://github.com/mark-hahn/find-selection",
   "license": "MIT",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">0.170.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "sub-atom": "*"
+  }
 }
