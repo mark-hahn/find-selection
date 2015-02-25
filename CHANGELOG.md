@@ -1,3 +1,6 @@
+## 0.13.5 - 2/24/2015
+Removed deprecations from keymaps
+
 ## 0.13.4 - 2/15/2015
 Removed deprecations
 
