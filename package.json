@@ -3,10 +3,10 @@
   "main": "./lib/find-selection",
   "version": "0.13.6",
   "description": "Find occurance of selected text without using find dialog",
-  "activationCommands": {
-    "atom-text-editor": "find-selection:find-next",
-    "atom-text-editor": "find-selection:find-previous"
-  },
+  "activationEvents": [
+    "find-selection:find-next",
+    "find-selection:find-previous"
+  ],
   "repository": "https://github.com/mark-hahn/find-selection",
   "license": "MIT",
   "engines": {
