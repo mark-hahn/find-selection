@@ -1,3 +1,6 @@
+## 0.13.7 - 3/11/2015
+switched activationEvents to activationCommands
+
 ## 0.13.6 - 3/11/2015
 fixed deprecations in main
 
