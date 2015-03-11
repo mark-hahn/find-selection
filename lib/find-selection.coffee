@@ -12,9 +12,9 @@ module.exports =
     @state.selection = (@state.selection ?= '')
 
   find: (dir) ->
-    editor      = atom.workspace.activePaneItem
+    editor      = atom.workspace.getActivePaneItem()
     buffer      = editor.getBuffer()
-    origRange   = editor.getSelection().getBufferRange()
+    origRange   = editor.getLastSelection().getBufferRange()
     selText     = editor.getSelectedText().replace /[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&"
     noSel       = origRange.isEmpty()
     
