@@ -1,3 +1,6 @@
+## 0.13.8 - 3/11/2015
+fixed fwd when no selection
+
 ## 0.13.7 - 3/11/2015
 switched activationEvents to activationCommands
 

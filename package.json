@@ -1,7 +1,7 @@
 {
   "name": "find-selection",
   "main": "./lib/find-selection",
-  "version": "0.13.7",
+  "version": "0.13.8",
   "description": "Find occurance of selected text without using find dialog",
   "activationCommands": {
     "atom-text-editor": ["find-selection:find-next", "find-selection:find-previous"]
