@@ -33,14 +33,12 @@ module.exports =
     if matchArray.length is 0 then return
     origIdx ?= 0
 
-    if noSel then selMatchIdx = origIdx
+    if dir > 0
+      if origIdx is matchArray.length - 1 then selMatchIdx = 0
+      else selMatchIdx = origIdx + 1
     else
-      if dir > 0
-        if origIdx is matchArray.length - 1 then selMatchIdx = 0
-        else selMatchIdx = origIdx + 1
-      else
-        if origIdx is 0 then selMatchIdx = matchArray.length - 1
-        else selMatchIdx = origIdx - 1
+      if origIdx is 0 then selMatchIdx = matchArray.length - 1
+      else selMatchIdx = origIdx - 1
 
     newRange = matchArray[selMatchIdx].range
     editor.setCursorBufferPosition newRange.start, {autoscroll: yes}
