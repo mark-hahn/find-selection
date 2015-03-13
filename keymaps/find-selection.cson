@@ -2,3 +2,5 @@
 'atom-workspace atom-text-editor':
   'ctrl-f3':       'find-selection:find-next'
   'ctrl-shift-f3': 'find-selection:find-previous'
+  'ctrl-f4':	   'find-selection:find-next-casesensitive'
+  'ctrl-shift-f4': 'find-selection:find-previous-casesensitive'

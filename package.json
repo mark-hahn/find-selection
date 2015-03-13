@@ -4,7 +4,12 @@
   "version": "0.13.8",
   "description": "Find occurance of selected text without using find dialog",
   "activationCommands": {
-    "atom-text-editor": ["find-selection:find-next", "find-selection:find-previous"]
+    "atom-text-editor": [
+      "find-selection:find-next",
+      "find-selection:find-previous",
+      "find-selection:find-next-casesensitive",
+      "find-selection:find-previous-casesensitive"
+    ]
   },
   "repository": "https://github.com/mark-hahn/find-selection",
   "license": "MIT",

@@ -4,14 +4,16 @@ SubAtom = require 'sub-atom'
 module.exports =
   activate: (@state) ->
     @subs = new SubAtom
-    
-    @subs.add atom.commands.add 'atom-text-editor', "find-selection:find-next",     => @find +1
-    @subs.add atom.commands.add 'atom-text-editor', "find-selection:find-previous", => @find -1
-    
+
+    @subs.add atom.commands.add 'atom-text-editor', "find-selection:find-next",     => @find +1, 'ig'
+    @subs.add atom.commands.add 'atom-text-editor', "find-selection:find-previous", => @find -1, 'ig'
+    @subs.add atom.commands.add 'atom-text-editor', "find-selection:find-next-casesensitive", => @find +1, 'g'
+    @subs.add atom.commands.add 'atom-text-editor', "find-selection:find-previous-casesensitive", => @find -1, 'g'
+
     @state ?= {}
     @state.selection = (@state.selection ?= '')
 
-  find: (dir) ->
+  find: (dir, casesensitive) ->
     editor      = atom.workspace.getActivePaneItem()
     buffer      = editor.getBuffer()
     origRange   = editor.getLastSelection().getBufferRange()
@@ -23,7 +25,7 @@ module.exports =
 
     origIdx = null
     matchArray = []
-    buffer.scan new RegExp(selText, 'ig'), (res) ->
+    buffer.scan new RegExp(selText, casesensitive), (res) ->
       if origIdx is null
           comp = res.range.compare origRange
           if comp > -1
