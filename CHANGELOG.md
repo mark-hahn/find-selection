@@ -1,3 +1,6 @@
+## 0.14.0 - 3/12/2015
+added case-sensitive search keys
+
 ## 0.13.8 - 3/11/2015
 fixed fwd when no selection
 
