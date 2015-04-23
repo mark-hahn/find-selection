@@ -1,3 +1,6 @@
+## 0.15.0 - 4/23/2015
+added spec tests, thanks @vramana
+
 ## 0.14.0 - 3/12/2015
 added case-sensitive search keys
 
