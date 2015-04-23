@@ -19,7 +19,7 @@ module.exports =
     origRange   = editor.getLastSelection().getBufferRange()
     selText     = editor.getSelectedText().replace /[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&"
     noSel       = origRange.isEmpty()
-    
+
     if (selText or= @state.selection) then @state.selection = selText
     if not selText then return
 
@@ -27,9 +27,9 @@ module.exports =
     matchArray = []
     buffer.scan new RegExp(selText, casesensitive), (res) ->
       if origIdx is null
-          comp = res.range.compare origRange
-          if comp > -1
-            origIdx = matchArray.length
+        comp = res.range.compare origRange
+        if comp > -1
+          origIdx = matchArray.length
       matchArray.push res
 
     if matchArray.length is 0 then return
@@ -50,5 +50,5 @@ module.exports =
     editor.setSelectedBufferRanges [newRange]
 
   serialize: -> @state
-  
+
   deactivate: -> @subs.dispose()
